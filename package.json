@@ -5,7 +5,7 @@
   "scripts": {
     "build": "tailwindcss -i css/input.css -o css/tailwind.css --minify",
     "format": "prettier --write index.html confirmation.html components/*.html js/*.js css/custom-styles.css",
-    "build:site": "npm run build && node scripts/build.mjs"
+    "build:site": "node scripts/build.mjs"
   },
   "devDependencies": {
     "tailwindcss": "3.4.17",

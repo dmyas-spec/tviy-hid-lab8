@@ -1,8 +1,14 @@
 import { cp, mkdir, readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
+import { spawnSync } from "node:child_process";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
+const tailwind = spawnSync(process.execPath, [
+  path.join(root, "node_modules/tailwindcss/lib/cli.js"),
+  "-i", "css/input.css", "-o", "css/tailwind.css", "--minify",
+], { cwd: root, stdio: "inherit" });
+if (tailwind.status !== 0) process.exit(tailwind.status ?? 1);
 const destination = path.join(root, "dist");
 await mkdir(destination, { recursive: true });
 for (const name of ["index.html", "confirmation.html", "assets", "js"]) {
