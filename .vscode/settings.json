@@ -1,0 +1,11 @@
+{
+  "liveServer.settings.port": 5508,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "tailwindCSS.includeLanguages": {
+    "html": "html"
+  },
+  "files.exclude": {
+    "node_modules": true
+  }
+}

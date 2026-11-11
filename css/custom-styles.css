@@ -1,0 +1,35 @@
+/* Лише поведінка браузера та елементи, специфічні для проєкту. */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 1rem;
+}
+:focus-visible {
+  outline: 2px solid #12664f;
+  outline-offset: 4px;
+}
+body > footer :focus-visible {
+  outline-color: #e8a23a;
+}
+summary {
+  list-style: none;
+  cursor: pointer;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+header details[open] summary {
+  background: #093d30;
+}
+[hidden] {
+  display: none !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0s !important;
+  }
+}

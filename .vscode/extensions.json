@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "bradlc.vscode-tailwindcss",
+    "esbenp.prettier-vscode",
+    "moalamri.inline-fold",
+    "ritwickdey.LiveServer"
+  ]
+}

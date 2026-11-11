@@ -1,0 +1,892 @@
+<!doctype html>
+
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta
+      content="Настільні ігри для компанії, сім’ї та подарунків. Пройди квіз підбору, переглянь правила у відео та обери формат свого ігрового вечора."
+      name="description"
+    />
+    <title>Настільні ігри з підбором — Твій хід | Кубики та картки</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="assets/fonts/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="css/tailwind.css" rel="stylesheet" />
+    <link href="css/custom-styles.css" rel="stylesheet" />
+    <script defer="" src="js/store.js"></script>
+    <script defer="" src="js/landing.js"></script>
+  </head>
+  <body class="bg-white font-sans text-ink antialiased">
+    <a
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-control focus:bg-white focus:p-4 focus:text-brand"
+      href="#main"
+      title="Перейти до вмісту"
+      >Перейти до вмісту</a
+    >
+    <header class="bg-cream">
+      <nav
+        aria-label="Основна навігація"
+        class="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-4 md:px-6 md:py-6 lg:px-8"
+      >
+        <a
+          aria-label="Твій хід — головна"
+          class="shrink-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+          href="index.html"
+          title="Твій хід — головна"
+        >
+          <img
+            alt="Твій хід"
+            class="h-auto w-28 min-[375px]:w-36 sm:w-40"
+            height="44"
+            src="assets/icons/logo.svg"
+            width="172"
+          />
+        </a>
+        <ul
+          class="hidden items-center gap-4 font-semibold lg:flex [&_a]:inline-flex [&_a]:min-h-12 [&_a]:items-center [&_a]:hover:text-brand"
+        >
+          <li>
+            <a
+              class="whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+              href="#catalog"
+              title="Каталог"
+              >Каталог</a
+            >
+          </li>
+          <li>
+            <a
+              class="whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+              href="#about"
+              title="Про нас"
+              >Про нас</a
+            >
+          </li>
+          <li>
+            <a
+              class="whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+              href="#media"
+              title="Відео"
+              >Відео</a
+            >
+          </li>
+          <li>
+            <a
+              class="whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+              href="#contact"
+              title="Контакти"
+              >Контакти</a
+            >
+          </li>
+        </ul>
+        <a
+          class="hidden min-h-12 items-center justify-center gap-2 rounded-control bg-brand px-5 py-2.5 font-semibold text-white transition-colors duration-200 hover:bg-brand-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand active:bg-brand-active lg:inline-flex"
+          href="#quiz"
+          title="Пройти квіз"
+          >Пройти квіз</a
+        >
+        <details class="relative ml-auto lg:hidden">
+          <summary
+            aria-label="Відкрити або закрити меню"
+            class="inline-flex min-h-12 w-12 shrink-0 items-center justify-center gap-3 rounded-control bg-brand px-0 py-3 font-semibold text-white transition-colors hover:bg-brand-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand active:bg-brand-active"
+          >
+            <i aria-hidden="true" class="fa-solid fa-bars text-lg"></i
+            ><span class="sr-only">Меню</span>
+          </summary>
+          <div
+            aria-label="Мобільна навігація"
+            class="absolute right-0 top-full z-20 mt-3 w-56 rounded-control border border-sage bg-white p-3 shadow-lg [&_a]:flex [&_a]:min-h-12 [&_a]:items-center [&_a]:rounded-lg [&_a]:px-3 [&_a]:hover:bg-sage"
+            role="group"
+          >
+            <ul>
+              <li><a href="#catalog" title="Каталог">Каталог</a></li>
+              <li><a href="#about" title="Про нас">Про нас</a></li>
+              <li><a href="#media" title="Відео">Відео</a></li>
+              <li><a href="#contact" title="Контакти">Контакти</a></li>
+            </ul>
+          </div>
+        </details>
+        <a
+          aria-label="Кошик: 0 товарів"
+          class="inline-flex min-h-12 min-w-12 items-center justify-center gap-2 rounded-control border border-line px-3 hover:bg-sage focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand active:bg-sage"
+          href="#cart-panel"
+          id="cart-link"
+          title="Кошик: 0 товарів"
+          ><i aria-hidden="true" class="fa-solid fa-cart-shopping"></i
+          ><span
+            class="rounded-full bg-brand px-2 py-0.5 text-xs font-bold text-white"
+            id="cart-count"
+            >0</span
+          ></a
+        >
+        <form
+          class="order-last flex w-full gap-2 xl:order-none xl:w-56"
+          id="search-form"
+          role="search"
+        >
+          <label class="sr-only" for="search">Пошук ігор у каталозі</label
+          ><input
+            autocomplete="off"
+            class="min-h-12 min-w-0 flex-1 rounded-control border border-line bg-white px-3 text-sm"
+            id="search"
+            placeholder="Знайти гру…"
+            type="search"
+          /><button
+            aria-label="Знайти гру"
+            class="min-h-12 min-w-12 rounded-control bg-brand text-white transition duration-200 hover:bg-brand-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand active:bg-brand-active motion-reduce:transition-none"
+            type="submit"
+          >
+            <i aria-hidden="true" class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+      </nav>
+    </header>
+    <main id="main">
+      <section aria-labelledby="hero-title" class="bg-cream pb-12 md:pb-16">
+        <div
+          class="mx-auto grid w-full max-w-7xl items-center gap-6 px-4 py-6 md:grid-cols-2 md:gap-8 md:px-6 md:py-16 lg:gap-16 lg:px-8"
+        >
+          <div class="space-y-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-brand md:text-sm">
+              Настільні ігри для вашої компанії
+            </p>
+            <h1
+              class="text-3xl font-bold leading-tight tracking-tight md:text-4xl lg:text-5xl"
+              id="hero-title"
+            >
+              Настільні ігри, які точно сподобаються, без довгого вибору.
+            </h1>
+            <p class="text-base leading-relaxed text-muted md:text-lg">
+              Підберемо формат гри під твою компанію, час і сценарій вечора. Для друзів,
+              сімейного вечора або подарунка — без довгого гортання каталогу.
+            </p>
+            <a
+              class="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-control bg-brand px-5 py-2.5 font-semibold text-white transition duration-200 hover:bg-brand-hover hover:shadow-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand active:bg-brand-active motion-reduce:transition-none sm:w-auto"
+              href="#quiz"
+              title="Пройти квіз"
+              >Пройти квіз</a
+            >
+            <p class="text-sm text-muted">
+              Три короткі запитання. Результат одразу на сторінці.
+            </p>
+          </div>
+          <img
+            alt="Настільна гра: зелена дошка, фішки та картки з символами"
+            class="h-auto w-full rounded-panel"
+            fetchpriority="high"
+            height="840"
+            src="assets/images/hero.webp"
+            width="920"
+          />
+        </div>
+      </section>
+      <section
+        aria-labelledby="benefits-title"
+        class="bg-cream pb-12 md:pb-16"
+        id="benefits"
+      >
+        <div class="mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8">
+          <h2
+            class="mb-6 text-2xl font-bold tracking-tight md:text-3xl"
+            id="benefits-title"
+          >
+            Менше пошуку — більше гри
+          </h2>
+          <ul
+            aria-label="Переваги сервісу"
+            class="mx-auto grid w-full max-w-7xl gap-6 px-4 font-semibold sm:grid-cols-3 md:px-6 lg:px-8 [&_img]:shrink-0 [&_li]:flex [&_li]:items-center [&_li]:gap-3"
+          >
+            <li>
+              <img
+                alt=""
+                height="40"
+                src="assets/icons/icon-speed.svg"
+                width="40"
+              /><span>Підбір без зайвих кроків</span>
+            </li>
+            <li>
+              <img
+                alt=""
+                height="40"
+                src="assets/icons/icon-analytics.svg"
+                width="40"
+              /><span>Зрозумілі правила</span>
+            </li>
+            <li>
+              <img
+                alt=""
+                height="40"
+                src="assets/icons/icon-security.svg"
+                width="40"
+              /><span>Безпечний вибір</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section
+        aria-labelledby="about-title"
+        class="bg-cream py-12 md:py-16 lg:py-20"
+        id="about"
+      >
+        <div
+          class="mx-auto grid w-full max-w-7xl gap-10 px-4 md:grid-cols-2 md:px-6 lg:px-8 [&_p]:leading-relaxed"
+        >
+          <div>
+            <p class="text-xs font-bold uppercase tracking-wider text-brand md:text-sm">
+              Кубики та картки
+            </p>
+            <h2
+              class="text-3xl font-bold leading-tight tracking-tight md:text-4xl"
+              id="about-title"
+            >
+              Складний вибір беремо на себе
+            </h2>
+            <p>
+              Годинами гортав каталоги й боявся обрати гру, яка залишиться на полиці?
+              «Кубики та картки» допомагає почати з простих запитань: хто гратиме,
+              скільки є часу та який настрій вечора. Ти отримуєш пояснення вибору, а
+              далі сам вирішуєш, чи підходить цей формат.
+            </p>
+            <a
+              class="inline-flex min-h-12 items-center gap-2 font-semibold underline decoration-brand underline-offset-4 hover:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+              href="#quiz"
+              title="Запитати про підбір"
+              >Перейти до квізу</a
+            >
+          </div>
+          <ol class="space-y-6 [&_li]:space-y-2">
+            <li>
+              <span
+                aria-hidden="true"
+                class="inline-flex h-12 w-12 items-center justify-center rounded-control bg-sage font-bold text-brand"
+                >01</span
+              >
+              <h3 class="text-xl font-bold leading-snug">Розкажи про компанію</h3>
+              <p>Скільки вас і який вечір плануєте?</p>
+            </li>
+            <li>
+              <span
+                aria-hidden="true"
+                class="inline-flex h-12 w-12 items-center justify-center rounded-control bg-sage font-bold text-brand"
+                >02</span
+              >
+              <h3 class="text-xl font-bold leading-snug">Отримай рекомендацію</h3>
+              <p>Гра з правилами, що підходять саме вам.</p>
+            </li>
+            <li>
+              <span
+                aria-hidden="true"
+                class="inline-flex h-12 w-12 items-center justify-center rounded-control bg-sage font-bold text-brand"
+                >03</span
+              >
+              <h3 class="text-xl font-bold leading-snug">Збери друзів</h3>
+              <p>Залишилося домовитися про час зустрічі.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+      <section
+        aria-labelledby="catalog-title"
+        class="py-12 md:py-16 lg:py-20"
+        id="catalog"
+      >
+        <div class="mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8">
+          <header class="mb-8 space-y-3 md:mb-10">
+            <p class="text-xs font-bold uppercase tracking-wider text-brand md:text-sm">
+              Твій наступний ігровий вечір
+            </p>
+            <h2
+              class="text-3xl font-bold leading-tight tracking-tight md:text-4xl"
+              id="catalog-title"
+            >
+              Знайди свою гру
+            </h2>
+            <p>Для великої компанії, затишного вечора або подарунка.</p>
+            <p class="mt-4 max-w-2xl text-sm leading-relaxed text-muted">
+              Навчальні картки та демонстраційні ціни. Вони показують формати ігор і
+              роботу кошика; наявність реальних товарів не підтверджується.
+            </p>
+          </header>
+          <p class="mb-6 text-sm text-muted" id="search-status" role="status">
+            Показано 3 гри
+          </p>
+          <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <li data-name="вечір у компанії" data-product="0" id="product-game-one">
+              <article
+                aria-labelledby="game-one"
+                class="flex h-full flex-col overflow-hidden rounded-panel border border-sage bg-white shadow-card transition-shadow focus-within:ring-2 focus-within:ring-brand hover:shadow-lg"
+              >
+                <img
+                  alt="Фішки та картки гри для компанії"
+                  class="aspect-[23/16] w-full object-cover"
+                  fetchpriority="high"
+                  height="840"
+                  loading="lazy"
+                  src="assets/images/hero.webp"
+                  width="920"
+                />
+                <div class="flex flex-1 flex-col gap-3 p-4 md:p-6">
+                  <span
+                    class="self-start rounded-full bg-sage px-3 py-1 text-xs font-semibold text-brand"
+                    >Для компанії</span
+                  >
+                  <h3 class="text-xl font-bold leading-snug" id="game-one">
+                    Вечір у компанії
+                  </h3>
+                  <p>Короткі правила для веселого вечора.</p>
+                  <p class="text-sm text-muted">
+                    2–6 гравців <span aria-hidden="true">•</span> 30–45 хв
+                  </p>
+                  <footer
+                    class="mt-auto flex flex-wrap items-center justify-between gap-3 pt-3"
+                  >
+                    <p class="text-xl font-bold">890 ₴</p>
+                    <button
+                      aria-label="Додати в кошик: Вечір у компанії"
+                      class="inline-flex min-h-12 items-center justify-center gap-2 rounded-control bg-brand px-4 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-brand-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand active:bg-brand-active disabled:cursor-not-allowed disabled:opacity-50"
+                      data-add="0"
+                      type="button"
+                    >
+                      У кошик
+                    </button>
+                  </footer>
+                </div>
+              </article>
+            </li>
+            <li data-name="час разом" data-product="1" id="product-game-two">
+              <article
+                aria-labelledby="game-two"
+                class="flex h-full flex-col overflow-hidden rounded-panel border border-sage bg-white shadow-card transition-shadow focus-within:ring-2 focus-within:ring-brand hover:shadow-lg"
+              >
+                <img
+                  alt="Настільна гра для сімейного вечора"
+                  class="aspect-[23/16] w-full object-cover"
+                  height="840"
+                  loading="lazy"
+                  src="assets/images/hero.webp"
+                  width="920"
+                />
+                <div class="flex flex-1 flex-col gap-3 p-4 md:p-6">
+                  <span
+                    class="self-start rounded-full bg-sage px-3 py-1 text-xs font-semibold text-brand"
+                    >Для сім’ї</span
+                  >
+                  <h3 class="text-xl font-bold leading-snug" id="game-two">
+                    Час разом
+                  </h3>
+                  <p>Одна гра, що об’єднає різні покоління.</p>
+                  <p class="text-sm text-muted">
+                    2–4 гравці <span aria-hidden="true">•</span> 20–40 хв
+                  </p>
+                  <footer
+                    class="mt-auto flex flex-wrap items-center justify-between gap-3 pt-3"
+                  >
+                    <p class="text-xl font-bold">740 ₴</p>
+                    <button
+                      aria-label="Додати в кошик: Час разом"
+                      class="inline-flex min-h-12 items-center justify-center gap-2 rounded-control bg-brand px-4 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-brand-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand active:bg-brand-active disabled:cursor-not-allowed disabled:opacity-50"
+                      data-add="1"
+                      type="button"
+                    >
+                      У кошик
+                    </button>
+                  </footer>
+                </div>
+              </article>
+            </li>
+            <li data-name="вдалий подарунок" data-product="2" id="product-game-three">
+              <article
+                aria-labelledby="game-three"
+                class="flex h-full flex-col overflow-hidden rounded-panel border border-sage bg-white shadow-card transition-shadow focus-within:ring-2 focus-within:ring-brand hover:shadow-lg"
+              >
+                <img
+                  alt="Картки та ігрове поле для подарункового набору"
+                  class="aspect-[23/16] w-full object-cover"
+                  height="840"
+                  loading="lazy"
+                  src="assets/images/hero.webp"
+                  width="920"
+                />
+                <div class="flex flex-1 flex-col gap-3 p-4 md:p-6">
+                  <span
+                    class="self-start rounded-full bg-sage px-3 py-1 text-xs font-semibold text-brand"
+                    >На подарунок</span
+                  >
+                  <h3 class="text-xl font-bold leading-snug" id="game-three">
+                    Вдалий подарунок
+                  </h3>
+                  <p>Нові враження замість ще однієї речі.</p>
+                  <p class="text-sm text-muted">
+                    2–5 гравців <span aria-hidden="true">•</span> 30–60 хв
+                  </p>
+                  <footer
+                    class="mt-auto flex flex-wrap items-center justify-between gap-3 pt-3"
+                  >
+                    <p class="text-xl font-bold">1 090 ₴</p>
+                    <button
+                      aria-label="Додати в кошик: Вдалий подарунок"
+                      class="inline-flex min-h-12 items-center justify-center gap-2 rounded-control bg-brand px-4 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-brand-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand active:bg-brand-active disabled:cursor-not-allowed disabled:opacity-50"
+                      data-add="2"
+                      type="button"
+                    >
+                      У кошик
+                    </button>
+                  </footer>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section
+        aria-labelledby="cart-title"
+        class="bg-cream py-12 md:py-16"
+        id="cart-panel"
+      >
+        <div class="mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold" id="cart-title">Твій кошик</h2>
+          <p class="mt-3 text-sm text-muted">
+            Навчальний кошик. Оплата й оформлення замовлення не виконуються.
+          </p>
+          <ul class="mt-6 space-y-3" id="cart-items">
+            <li>Кошик порожній. Обери гру в каталозі.</li>
+          </ul>
+          <p class="mt-6 text-xl font-bold">Разом: <span id="cart-total">0 ₴</span></p>
+          <button
+            class="mt-4 inline-flex min-h-12 items-center justify-center gap-2 rounded-control bg-brand px-5 py-2.5 font-semibold text-white transition-colors duration-200 hover:bg-brand-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand active:bg-brand-active disabled:cursor-not-allowed disabled:opacity-50"
+            disabled=""
+            id="clear-cart"
+            type="button"
+          >
+            Очистити кошик
+          </button>
+        </div>
+      </section>
+      <p
+        aria-atomic="true"
+        aria-live="polite"
+        class="sr-only"
+        id="cart-status"
+        role="status"
+      ></p>
+
+      <section aria-labelledby="media-title" class="py-12 md:py-16 lg:py-20" id="media">
+        <div class="mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8">
+          <header class="mb-8 max-w-2xl space-y-3">
+            <p class="text-xs font-bold uppercase tracking-wider text-brand">
+              Побачити гру в дії
+            </p>
+            <h2
+              class="text-3xl font-bold leading-tight tracking-tight md:text-4xl"
+              id="media-title"
+            >
+              Правила стають зрозумілішими у відео
+            </h2>
+            <p class="leading-relaxed text-muted">
+              Тематичний приклад: «Гікорі Дікорі» — огляд і правила від Geekach Games.
+              Відео ілюструє знайомство з настільною грою; це не одна з демонстраційних
+              карток каталогу.
+            </p>
+          </header>
+          <figure class="max-w-4xl">
+            <!-- Медіаінтеграція YouTube: офіційний iframe із сайту видавця; адаптивне співвідношення 16:9, доступний title, lazy loading. -->
+            <div class="aspect-video overflow-hidden rounded-panel bg-sage shadow-card">
+              <iframe
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen=""
+                class="h-full w-full border-0"
+                id="video-frame"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+                src="https://www.youtube.com/embed/f-fiqRA8hCI"
+                title="Гікорі Дікорі — огляд та правила, Geekach Games"
+              ></iframe>
+            </div>
+            <figcaption class="mt-4 text-sm text-muted">
+              Автор: Geekach Games.
+              <a
+                class="inline-flex min-h-12 items-center font-semibold text-brand underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+                href="https://www.youtube.com/watch?v=f-fiqRA8hCI"
+                rel="noopener noreferrer"
+                target="_blank"
+                title="Відкрити відео на YouTube"
+                >Відкрити відео на YouTube</a
+              >
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <section aria-labelledby="faq-title" class="bg-cream py-12 md:py-16" id="faq">
+        <div class="mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8">
+          <h2
+            class="mb-8 text-3xl font-bold leading-tight tracking-tight md:text-4xl"
+            id="faq-title"
+          >
+            Перед твоєю першою партією
+          </h2>
+          <div class="grid gap-4 md:grid-cols-2">
+            <details
+              class="group rounded-panel border border-sage bg-white p-4 open:bg-sage"
+            >
+              <summary
+                class="flex min-h-12 cursor-pointer items-center justify-between gap-3 font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+              >
+                Як працює підбір?
+                <span
+                  aria-hidden="true"
+                  class="text-2xl font-normal transition-transform duration-200 group-open:rotate-45 motion-reduce:transition-none"
+                  >+</span
+                >
+              </summary>
+              <p class="mt-3 leading-relaxed text-muted">
+                Квіз зіставляє відповіді з трьома демонстраційними форматами. Результат
+                пояснює вибір і веде до картки.
+              </p>
+            </details>
+            <details
+              class="group rounded-panel border border-sage bg-white p-4 open:bg-sage"
+            >
+              <summary
+                class="flex min-h-12 cursor-pointer items-center justify-between gap-3 font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+              >
+                Чи потрібна підписка?
+                <span
+                  aria-hidden="true"
+                  class="text-2xl font-normal transition-transform duration-200 group-open:rotate-45 motion-reduce:transition-none"
+                  >+</span
+                >
+              </summary>
+              <p class="mt-3 leading-relaxed text-muted">
+                Квіз і перегляд каталогу не потребують реєстрації чи підписки.
+              </p>
+            </details>
+            <details
+              class="group rounded-panel border border-sage bg-white p-4 open:bg-sage"
+            >
+              <summary
+                class="flex min-h-12 cursor-pointer items-center justify-between gap-3 font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+              >
+                Чи можна оплатити гру тут?
+                <span
+                  aria-hidden="true"
+                  class="text-2xl font-normal transition-transform duration-200 group-open:rotate-45 motion-reduce:transition-none"
+                  >+</span
+                >
+              </summary>
+              <p class="mt-3 leading-relaxed text-muted">
+                Це навчальний лендинг. Кошик демонструє вибір та розрахунок суми; оплата
+                не виконується.
+              </p>
+            </details>
+            <details
+              class="group rounded-panel border border-sage bg-white p-4 open:bg-sage"
+            >
+              <summary
+                class="flex min-h-12 cursor-pointer items-center justify-between gap-3 font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+              >
+                Де знаходиться магазин?
+                <span
+                  aria-hidden="true"
+                  class="text-2xl font-normal transition-transform duration-200 group-open:rotate-45 motion-reduce:transition-none"
+                  >+</span
+                >
+              </summary>
+              <p class="mt-3 leading-relaxed text-muted">
+                Мапа показує умовну локацію у центрі Львова для демонстрації інтеграції.
+                Це не адреса діючого магазину.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+      <section
+        aria-labelledby="quiz-title"
+        class="bg-sage py-12 md:py-16 lg:py-20"
+        id="quiz"
+      >
+        <div
+          class="mx-auto grid w-full max-w-7xl items-start gap-8 px-4 md:grid-cols-2 md:px-6 lg:px-8"
+        >
+          <div class="space-y-5">
+            <p class="text-xs font-bold uppercase tracking-wider text-brand">
+              Твоя компанія — твій формат
+            </p>
+            <h2
+              class="text-3xl font-bold leading-tight tracking-tight md:text-4xl"
+              id="quiz-title"
+            >
+              Знайди гру для свого вечора
+            </h2>
+            <p class="leading-relaxed text-muted">
+              Обери кількість гравців, час і сценарій вечора. Ми покажемо відповідний
+              формат та пояснимо, чому саме його.
+            </p>
+            <p class="text-sm leading-relaxed text-muted">
+              Демонстраційний підбір серед трьох навчальних карток. Відповіді
+              залишаються тільки в цій вкладці.
+            </p>
+          </div>
+          <form
+            class="grid min-w-0 gap-4 rounded-panel border border-line bg-white p-4 shadow-card md:p-6"
+            id="quiz-form"
+          >
+            <label class="font-semibold" for="players">Скільки вас?</label
+            ><select
+              class="min-h-12 min-w-0 rounded-control border border-line bg-white px-3"
+              id="players"
+              required=""
+            >
+              <option value="">Обери кількість</option>
+              <option value="2">Двоє</option>
+              <option value="4">3–4 гравці</option>
+              <option value="6">5–6 гравців</option>
+            </select>
+            <label class="font-semibold" for="minutes">Скільки часу на гру?</label
+            ><select
+              class="min-h-12 min-w-0 rounded-control border border-line bg-white px-3"
+              id="minutes"
+              required=""
+            >
+              <option value="">Обери час</option>
+              <option value="30">До 30 хвилин</option>
+              <option value="45">До 45 хвилин</option>
+              <option value="60">Година або більше</option>
+            </select>
+            <label class="font-semibold" for="occasion">Який привід?</label
+            ><select
+              class="min-h-12 min-w-0 rounded-control border border-line bg-white px-3"
+              id="occasion"
+              required=""
+            >
+              <option value="">Обери сценарій</option>
+              <option value="friends">Вечір із друзями</option>
+              <option value="family">Сімейний вечір</option>
+              <option value="gift">Подарунок</option>
+            </select>
+            <button
+              class="inline-flex min-h-12 items-center justify-center gap-2 rounded-control bg-brand px-5 py-2.5 font-semibold text-white transition duration-200 hover:bg-brand-hover hover:shadow-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand active:bg-brand-active motion-reduce:transition-none"
+              type="submit"
+            >
+              Показати рекомендацію <span aria-hidden="true">→</span>
+            </button>
+            <div
+              aria-atomic="true"
+              aria-live="polite"
+              class="space-y-3 rounded-control bg-cream p-4"
+              hidden=""
+              id="quiz-result"
+            >
+              <h3 class="text-xl font-bold" id="quiz-result-title" tabindex="-1"></h3>
+              <p class="text-sm leading-relaxed" id="quiz-reason"></p>
+              <a
+                class="inline-flex min-h-12 items-center font-semibold underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+                href="#catalog"
+                id="quiz-link"
+                title="Переглянути рекомендовану картку"
+                >Переглянути рекомендовану картку</a
+              >
+            </div>
+          </form>
+        </div>
+      </section>
+      <section
+        aria-labelledby="contact-title"
+        class="bg-sage py-12 md:py-16 lg:py-20"
+        id="contact"
+      >
+        <div
+          class="mx-auto grid w-full max-w-7xl gap-8 px-4 md:grid-cols-2 md:px-6 lg:px-8 [&_p]:leading-relaxed"
+        >
+          <div>
+            <p class="text-xs font-bold uppercase tracking-wider text-brand md:text-sm">
+              Твій хід
+            </p>
+            <h2
+              class="text-3xl font-bold leading-tight tracking-tight md:text-4xl"
+              id="contact-title"
+            >
+              Допоможемо обрати
+            </h2>
+            <p>Розкажи про компанію та бажаний формат. Ми підкажемо, із чого почати.</p>
+            <p>
+              <a
+                class="inline-flex min-h-12 items-center gap-2 font-semibold underline decoration-brand underline-offset-4 hover:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+                href="mailto:hello@example.com"
+                title="hello@example.com"
+                ><i aria-hidden="true" class="fa-regular fa-envelope text-lg"></i>
+                hello@example.com</a
+              >
+            </p>
+          </div>
+          <form
+            action="confirmation.html"
+            class="grid gap-3 rounded-panel bg-white p-4 md:p-6 [&_label]:font-semibold"
+            method="get"
+          >
+            <p class="mt-4 text-sm leading-relaxed text-muted" id="form-note">
+              Навчальна форма: після перевірки полів відкриється сторінка підтвердження.
+              Дані нікуди не надсилаються.
+            </p>
+            <label for="email">Електронна пошта</label
+            ><input
+              aria-describedby="form-note"
+              autocomplete="email"
+              class="min-h-12 w-full rounded-control border border-line bg-white px-4 py-3 text-ink focus:border-brand focus:outline focus:outline-2 focus:outline-brand"
+              id="email"
+              placeholder="name@example.com"
+              required=""
+              type="email"
+            />
+            <label for="request">Яку гру шукаєш?</label
+            ><textarea
+              class="min-h-12 w-full rounded-control border border-line bg-white px-4 py-3 text-ink focus:border-brand focus:outline focus:outline-2 focus:outline-brand"
+              id="request"
+              maxlength="1000"
+              minlength="10"
+              placeholder="Наприклад, для 4 друзів, до 45 хвилин, бюджет 1 000 ₴"
+              required=""
+              rows="4"
+            ></textarea>
+            <button
+              class="inline-flex min-h-12 items-center justify-center rounded-control border border-brand px-5 py-3 font-semibold text-brand transition duration-200 hover:bg-sage focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand active:bg-sage motion-reduce:transition-none"
+              type="submit"
+            >
+              Перевірити навчальну форму
+            </button>
+          </form>
+        </div>
+      </section>
+      <section
+        aria-labelledby="location-title"
+        class="py-12 md:py-16 lg:py-20"
+        id="location"
+      >
+        <div class="mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8">
+          <header class="mb-8 space-y-3">
+            <h2
+              class="text-3xl font-bold leading-tight tracking-tight md:text-4xl"
+              id="location-title"
+            >
+              Плануй ігровий вечір у Львові
+            </h2>
+            <p class="max-w-2xl leading-relaxed text-muted">
+              Умовна локація навчального проєкту: площа Ринок, Львів. Карта показує
+              центр міста; це не адреса реального магазину.
+            </p>
+          </header>
+          <div class="grid min-w-0 gap-6 lg:grid-cols-2">
+            <figure class="min-w-0">
+              <!-- Медіаінтеграція Google Maps: код отримано через Поділитися → Вбудовування карти; фіксовані розміри й inline style замінено Tailwind. -->
+              <div
+                class="aspect-[4/3] overflow-hidden rounded-panel border border-sage bg-sage"
+                id="map-container"
+              >
+                <iframe
+                  allowfullscreen=""
+                  class="h-full w-full border-0"
+                  id="map-frame"
+                  loading="lazy"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2573.060136118491!2d24.02901737612297!3d49.84132757148233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473add6daee0eb21%3A0x98a6b79bb05742c2!2z0L_Quy4g0KDRi9C90L7Quiwg0JvRjNCy0L7Qsiwg0JvRjNCy0L7QstGB0LrQsNGPINC-0LHQu9Cw0YHRgtGMLCA3OTAwMA!5e0!3m2!1suk!2sua!4v1791554512968!5m2!1suk!2sua"
+                  title="Google Maps: площа Ринок, умовна локація проєкту у Львові"
+                ></iframe>
+              </div>
+              <figcaption class="mt-3 text-sm text-muted">
+                <a
+                  class="inline-flex min-h-12 items-center font-semibold text-brand underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+                  href="https://www.google.com/maps/search/?api=1&amp;query=Площа+Ринок,+Львів"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title="Відкрити локацію в Google Maps"
+                  >Відкрити локацію в Google Maps</a
+                >
+              </figcaption>
+            </figure>
+            <aside aria-labelledby="weather-title" class="min-w-0">
+              <h3 class="mb-3 text-xl font-bold" id="weather-title">
+                Погода для планування зустрічі
+              </h3>
+              <p class="mb-4 text-sm leading-relaxed text-muted">
+                Динамічний віджет Windy для Львова: прогноз вітру й погоди оновлюється
+                сервісом.
+              </p>
+              <!-- Сторонній інформер Windy: публічний embed, без API-ключа та геолокації відвідувача. -->
+              <div
+                class="aspect-[4/3] overflow-hidden rounded-panel border border-sage bg-sage"
+              >
+                <iframe
+                  class="h-full w-full border-0"
+                  id="weather-frame"
+                  loading="lazy"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  src="https://embed.windy.com/embed.html?type=map&amp;location=coordinates&amp;metricRain=mm&amp;metricTemp=%C2%B0C&amp;metricWind=km%2Fh&amp;zoom=8&amp;overlay=wind&amp;product=ecmwf&amp;level=surface&amp;lat=49.8413&amp;lon=24.0316&amp;detailLat=49.8413&amp;detailLon=24.0316&amp;marker=true&amp;detail=true"
+                  title="Windy: прогноз погоди у Львові"
+                ></iframe>
+              </div>
+              <a
+                class="mt-3 inline-flex min-h-12 items-center text-sm font-semibold text-brand underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+                href="https://www.windy.com/49.841/24.032"
+                rel="noopener noreferrer"
+                target="_blank"
+                title="Відкрити прогноз у Windy"
+                >Відкрити прогноз у Windy</a
+              >
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-ink py-12 text-white">
+      <div
+        class="mx-auto grid w-full max-w-7xl gap-8 px-4 md:grid-cols-2 md:px-6 lg:grid-cols-4 lg:px-8"
+      >
+        <a
+          class="text-2xl font-bold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand [&_span]:mt-3 [&_span]:block [&_span]:text-base [&_span]:font-normal"
+          href="index.html"
+          title="Твій хід Ігри, що збирають друзів."
+          >Твій хід<span>Ігри, що збирають друзів.</span></a
+        >
+        <nav aria-label="Навігація в підвалі">
+          <ul
+            class="space-y-2 [&_a]:inline-flex [&_a]:min-h-12 [&_a]:items-center [&_a]:underline-offset-4 [&_a]:hover:underline"
+          >
+            <li><a href="#catalog" title="Каталог">Каталог</a></li>
+            <li><a href="#about" title="Про магазин">Про магазин</a></li>
+            <li><a href="#contact" title="Контакти">Контакти</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Формати ігор">
+          <h2 class="mb-3 text-base font-semibold">Формати</h2>
+          <ul
+            class="space-y-2 [&_a]:inline-flex [&_a]:min-h-12 [&_a]:items-center [&_a]:hover:underline"
+          >
+            <li><a href="#catalog" title="Для компанії">Для компанії</a></li>
+            <li><a href="#catalog" title="Для сім’ї">Для сім’ї</a></li>
+            <li><a href="#quiz" title="Підбір гри">Підбір гри</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2 class="mb-3 text-base font-semibold">Зв’язок</h2>
+          <a
+            class="inline-flex min-h-12 items-center underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+            href="#quiz"
+            title="Пройти квіз"
+            >Пройти квіз</a
+          >
+          <p class="mt-3 text-sm text-white/80">
+            Навчальна демонстрація магазину.<br />Кубики та картки.
+          </p>
+        </div>
+      </div>
+      <p
+        class="mx-auto mt-8 w-full max-w-7xl px-4 text-sm text-white/80 md:px-6 lg:px-8"
+      >
+        © 2026 Твій хід. Навчальний проєкт.
+      </p>
+    </footer>
+  </body>
+</html>
