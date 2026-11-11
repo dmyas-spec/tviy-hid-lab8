@@ -29,4 +29,12 @@ scripts/build.mjs готує тільки публічні файли для dis
 ## Публікація
 
 GitHub Pages: гілка main, коренева папка /. Netlify: npm run build:site, папка dist.
-Перевірені адреси додаються після фактичної публікації.
+Репозиторій: https://github.com/dmyas-spec/tviy-hid-lab8
+
+GitHub Pages: https://dmyas-spec.github.io/tviy-hid-lab8/
+
+Netlify: https://courageous-sfogliatella-bee203.netlify.app/
+
+Обидва сайти перевірено: HTTP 200, HTML лендингу присутній. Netlify опубліковано вручну з dist.
+
+Підготовка до захисту: [пам’ятка](docs/DEFENSE.md).
